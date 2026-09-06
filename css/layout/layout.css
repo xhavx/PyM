@@ -1,0 +1,114 @@
+/* ==========================================================================
+   PROJECT: PyM - LAYOUT STRUCTURE (Sincronizado con tu HTML exacto)
+   ========================================================================== */
+
+/* Ajustes globales del fondo y documento */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-background); /* Fondo rústico claro global */
+  color: var(--text-on-background);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+/* Envoltura para centrar en pantallas grandes */
+.container-global {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+/* 2. HEADER ESTRUCTURAL (Fijo arriba de la pantalla) */
+.header-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  
+  /* 🌟 CORRECCIÓN: Ahora toma el fondo crema idéntico al logo de PyM */
+  background-color: var(--bg-header-logo) !important; 
+  
+   /* Una línea inferior teja muy suave para separar del fondo */
+  border-bottom: 1px solid var(--color-outline-variant) !important;
+  
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter-mobile);
+  z-index: 1000;
+  
+  /* Reseteos de seguridad anteriores */
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Forzamos a que el título "Menú" y "PyM" de la cabecera tomen el marrón del logo */
+.marca-titulo-pagina {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-on-surface) !important; 
+}
+
+.marca-contenedor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.logo-imagen {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.marca-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.marca-subtitulo {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-on-surface-variant) !important; 
+  font-weight: 700;
+}
+
+/* 🌟 CORRECCIÓN 2: Cambiado de .main-layout a .contenido-principal para enlazar tu HTML real */
+.contenido-principal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  /* 🌟 CLAVE: Esto empuja el contenido hacia abajo los 64px exactos del header fijo */
+  padding-top: calc(64px + var(--space-md)) !important; 
+  padding-bottom: var(--space-2xl);
+  padding-left: var(--gutter-mobile);
+  padding-right: var(--gutter-mobile);
+  box-sizing: border-box;
+  gap: var(--space-lg);
+}
+
+/* Toast de alerta */
+.toast-mensaje {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  align-items: center;
+  gap: var(--space-xs);
+  background-color: var(--color-inverse-surface);
+  color: var(--color-inverse-on-surface);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  z-index: 2000;
+  box-shadow: var(--shadow-xl);
+}

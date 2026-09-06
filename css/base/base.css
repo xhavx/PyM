@@ -1,0 +1,78 @@
+css/* ==========================================================================
+   2. ESTILOS BASE (RESET / ELEMENTOS HTML)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-background);
+  color: var(--text-on-background);
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Títulos con Epilogue según tu Brand Book */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-on-background);
+  font-weight: 700;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+html, body { 
+  width: 100vw; 
+  margin: 0; 
+  padding: 0; 
+}
+body { 
+  overscroll-behavior: none; 
+}
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+main > :first-child { margin-top: 0 !important; }
+main > :last-child { margin-bottom: 0 !important; }
+::-webkit-scrollbar { display: none; }
+
+/* ==========================================================================
+   PROJECT: PyM - BASE RESET
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-surface);
+}
+
+body {
+  overscroll-behavior: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Áreas seguras para dispositivos móviles modernos */
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+
+main > :first-child { margin-top: 0 !important; }
+main > :last-child { margin-bottom: 0 !important; }
+
+/* Ocultar scrollbars por estética minimalista */
+::-webkit-scrollbar {
+  display: none;
+}
+

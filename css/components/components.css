@@ -1,0 +1,436 @@
+/* ==========================================================================
+   PROJECT: PyM - COMPONENTS STYLES (Estilos de Componentes)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. FLOATING CIRCLE MENU (Menú Desplegable Móvil)
+   ========================================================================== */
+.menu-desplegable-contenedor {
+  position: relative;
+  z-index: 100;
+}
+
+/* El botón circular que activa todo */
+.btn-menu-disparador {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(61, 39, 29, 0.2);
+  position: relative;
+  z-index: 102; /* Queda sobre la cortina del menú */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-menu-disparador:active {
+  transform: scale(0.9);
+}
+
+/* Panel con las opciones de navegación (El círculo que se agranda) */
+.nav-opciones {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  width: 250px;
+  
+  /* 🌟 CORRECCIÓN CLAVE: Forzamos tu color rosa claro (highest container) */
+  background-color: var(--bg-surface-container-highest) !important; 
+  
+  /* 🌟 AGREGAMOS: Un borde suave a tono para que combine con tus tarjetas */
+  border: 1px solid var(--color-outline-variant); 
+  
+  border-radius: 24px;
+  padding: 64px 20px 20px 20px;
+  box-shadow: var(--shadow-xl);
+  z-index: 101;
+  
+  /* Efecto clip-path original */
+  clip-path: circle(0% at calc(100% - 22px) 22px);
+  transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Estado Activo: Cuando JavaScript abre el menú */
+.nav-opciones.menu-abierto {
+  clip-path: circle(150% at calc(100% - 22px) 22px);
+  pointer-events: auto;
+}
+
+/* Panel con las opciones de navegación (El círculo que se agranda) */
+.menu-desplegable-contenedor .nav-opciones {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  width: 250px;
+  background: var(--bg-surface-container-highest, #ffdbcc) !important; 
+  background-color: var(--bg-surface-container-highest, #ffdbcc) !important;
+  border: 1px solid var(--color-outline-variant); 
+  border-radius: 24px;
+  padding: 64px 20px 20px 20px;
+  box-shadow: var(--shadow-xl);
+  z-index: 101;
+  
+  /* 🌟 CORRECCIÓN ULTRA SEGURA: Evita que cualquier borde se asome cuando está cerrado */
+  opacity: 0;
+  visibility: hidden;
+  
+  /* Efecto clip-path original */
+  clip-path: circle(0% at calc(100% - 22px) 22px);
+  transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+/* Estado Activo Reforzado: Al abrirse se vuelve 100% visible */
+.menu-desplegable-contenedor .nav-opciones.menu-abierto {
+  opacity: 1;
+  visibility: visible;
+  clip-path: circle(150% at calc(100% - 22px) 22px);
+  pointer-events: auto;
+}
+
+.nav-lista-enlaces {
+  list-style: none; /* Saca viñetas */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.enlace-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: var(--text-on-surface);
+  text-decoration: none; /* Saca subrayados morados */
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease;
+}
+
+.enlace-menu:active {
+  background-color: rgba(159, 60, 22, 0.1);
+}
+
+.enlace-menu span.material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 22px;
+}
+
+/* ==========================================================================
+   2. BANNER PROMO (Aviso de Horno Prendido)
+   ========================================================================== */
+.banner-horno {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: linear-gradient(135deg, var(--bg-surface-container) 0%, var(--bg-surface-container-high) 100%);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: var(--shadow-sm);
+}
+
+.banner-icono-decorativo {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(159, 60, 22, 0.1);
+  color: var(--color-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.banner-icono-decorativo span {
+  font-size: 24px;
+}
+
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.banner-estado-linea {
+  display: flex;
+  align-items: center; 
+  gap: var(--space-xs);
+  line-height: 1; /* Evita que el texto tire hacia abajo */
+}
+
+/* El punto verde de pulso */
+.punto-pulso {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  flex-shrink: 0; /* Evita que se deforme en celulares */
+  animation: pulso 2s infinite ease-in-out;
+}
+
+@keyframes pulso {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+.banner-subtitulo {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  margin: 0;
+  font-weight: 700;
+}
+
+.banner-texto-destacado {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-on-background); 
+  margin: 4px 0 0 0; /* Despega un poco del subtítulo */
+}
+
+/* ==========================================================================
+   3. SECCIÓN DE ACCESOS DIRECTOS (Tarjetas con Relieve y Fotos Nítidas)
+   ========================================================================== */
+.seccion-accesos {
+  width: 100%;
+}
+
+.accesos-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* 🌟 LA TARJETA CON TU FONDO ROSA CLARO DE MATERIAL 3 */
+.tarjeta-acceso {
+  display: flex; /* Coloca el texto a la izquierda y la foto a la derecha */
+  position: relative;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid var(--color-outline-variant);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+  
+  /* 🌟 Forzamos tu color rosa claro (highest container) */
+  background-color: var(--bg-surface-container-highest) !important; 
+}
+
+/* La tarjeta del catálogo se extiende en altura */
+.accesos-contenedor a:first-child.tarjeta-acceso {
+  height: 180px; 
+}
+
+.tarjeta-acceso:active {
+  transform: scale(0.98);
+}
+
+/* Contenedor de la Imagen Transparentes a la derecha */
+.tarjeta-acceso-imagen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%; 
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tus pizzas y facturas transparentes al 100% de brillo nativo */
+.acceso-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Evita que las pizzas se deformen o se corten */
+  opacity: 1 !important; 
+}
+
+/* Ajuste de espacio para el ícono de comprar de la segunda tarjeta */
+.accesos-contenedor a:last-child .tarjeta-acceso-imagen {
+  width: 45%; 
+}
+
+.accesos-contenedor a:last-child .acceso-img {
+  padding: var(--space-md);
+}
+
+/* Bloque de información del texto a la izquierda */
+.tarjeta-acceso-info {
+  flex: 1; 
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 5;
+  position: relative;
+  
+  /* 🌟 Quitamos el degradado oscuro y dejamos un desvanecido rosa muy suave */
+  background: linear-gradient(to right, rgba(255, 219, 204, 0.95) 0%, rgba(255, 219, 204, 0.4) 75%, transparent 100%);
+}
+
+.tarjeta-acceso-info h3.acceso-titulo {
+  font-family: var(--font-display);
+  color: var(--text-on-surface) !important; /* Marrón chocolate oscuro */
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.tarjeta-acceso-info p.acceso-descripcion {
+  font-family: var(--font-body);
+  color: var(--text-on-surface-variant) !important; /* Marrón medio rústico */
+  font-size: 13px;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   4. FOOTER SEMÁNTICO (Pie de Página Integrado en la Base)
+   ========================================================================== */
+.footer-principal {
+  background-color: var(--bg-surface-container);
+  padding: var(--space-xl) var(--space-md) var(--space-lg) var(--space-md);
+  margin-top: var(--space-2xl);
+  border-top: 1px solid var(--color-outline-variant);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.footer-marca-titulo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-on-surface);
+  margin: 0 0 var(--space-2xs) 0;
+  font-weight: 700;
+}
+
+.footer-marca-descripcion {
+  font-size: 14px;
+  color: var(--text-on-surface-variant);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-seccion-titulo {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-on-surface);
+  margin: 0 0 var(--space-sm) 0;
+  font-weight: 700;
+}
+
+.footer-lista-datos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-lista-datos li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 14px;
+  color: var(--text-on-surface-variant);
+}
+
+.footer-lista-datos span.material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.footer-nav-redes {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.enlace-red {
+  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--color-primary);
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.enlace-red:hover {
+  color: var(--color-primary-container);
+}
+
+.footer-derechos {
+  text-align: center;
+  border-top: 1px solid rgba(138, 114, 106, 0.2);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.footer-derechos p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-on-surface-variant);
+}
+
+/* Ajustes Extra para Tablet/PC */
+@media (min-width: 768px) {
+  .footer-contenido {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   5. RECONEXIÓN DE ICONOS DE GOOGLE (Al final de components.css)
+   ========================================================================== */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Centrado perfecto del icono dentro del botón circular teja */
+.btn-menu-disparador span.material-symbols-outlined {
+  font-size: 24px;
+  color: var(--color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

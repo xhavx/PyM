@@ -1,0 +1,16 @@
+/* ==========================================================================
+   PROJECT: PyM - MAIN ARCHIVE
+   ========================================================================== */
+
+/* 1. CONFIGURACIONES GLOBALES (Tokens de diseño) */
+@import "./settings/variables.css";
+@import "./settings/typography.css";
+
+/* 2. ESTILOS BASE (Reset y elementos HTML puros) */
+@import "./base/base.css";
+
+/* 3. ESTRUCTURA (Contenedores y grillas) */
+@import "./layout/layout.css";
+
+/* 4. COMPONENTES (Elementos de interfaz reutilizables) */
+@import "./components/components.css";

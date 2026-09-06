@@ -1,0 +1,73 @@
+/* ==========================================================================
+   PROJECT: PyM - ARCHIVO ÚNICO DE VARIABLES (DESIGN TOKENS)
+   ========================================================================== */
+:root {
+  /* --- 🎨 PALETA DE COLORES (Hearth Warmth System / Material 3) --- */
+  --bg-background: #FFFBF5;
+  --bg-surface: #FFFBF5;
+  --bg-surface-dim: #f8d2c3;
+  --bg-surface-bright: #fff8f6;
+  --bg-surface-container: #FFE9E1;
+  --bg-surface-container-low: #fff1ec;
+  --bg-surface-container-high: #ffe2d7;
+  --bg-surface-container-highest: #FFE9E1;
+   --bg-header-logo: #FFF4DE;
+  
+  /* Textos Principales */
+  --text-on-background: #2a170e;
+  --text-on-surface: #2a170e;
+  --text-on-surface-variant: #57423b;
+  
+  /* Identidad Visual (Marrón Tueste y Tejas) */
+  --color-primary: #9F3C16;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #bf542c;
+  --color-primary-fixed: #ffdbcf;
+  
+  /* Tonos Secundarios (Verde Rústico / Hojas) */
+  --color-secondary: #45664d;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed: #c7eccc;
+  
+  /* Elementos Inversos y Bordes */
+  --color-inverse-surface: #422b21;
+  --color-inverse-on-surface: #ffede6;
+  --color-outline: #8a726a;
+  --color-outline-variant: #DEC0B7;
+
+  /* Alertas */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+
+  /* --- 📏 SPACING & CADENCE (Modular 8px) --- */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --gutter-mobile: 1rem;
+  --gutter-desktop: 1.5rem;
+  --container-max: 75rem;
+
+  /* --- 📐 BORDER RADIUS (Redondeados de Esquinas) --- */
+  --radius-sm: 0.25rem;
+  --radius-default: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-xl-inner: 0.75rem;
+  --radius-full: 9999px;
+
+  /* --- ✍️ FUENTES PRINCIPALES --- */
+  --font-display: 'Epilogue', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* --- 🧱 SHADOWS (Hearth Shadows con tono cacao) --- */
+  --shadow-header: 0 4px 16px -2px rgba(61, 39, 29, 0.06);
+  --shadow-sm: 0 1px 2px rgba(61, 39, 29, 0.05);
+  --shadow-level-1: 0 4px 16px -2px rgba(61, 39, 29, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(61, 39, 29, 0.1), 0 10px 10px -5px rgba(61, 39, 29, 0.04);
+}
