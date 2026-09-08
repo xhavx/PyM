@@ -62,6 +62,15 @@ body {
   gap: var(--space-xs);
 }
 
+/* 🌟 AGREGAMOS: Mantiene la estructura limpia y remueve estilos de enlace del logo */
+.marca-contenedor-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none; /* Saca el subrayado */
+  color: inherit; /* Obliga a los textos a mantener sus colores marrón y teja originales */
+}
+
 .logo-imagen {
   height: 40px;
   width: auto;
