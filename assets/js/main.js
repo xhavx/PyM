@@ -1,6 +1,12 @@
-// assets/js/main.js
+/* ==========================================================================
+   PROJECT: PyM - JAVASCRIPT CENTRAL (Menú e Interacciones)
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // --------------------------------------------------------------------------
+    // 1. CONTROL DEL MENÚ FLOTANTE DESPLEGABLE
+    // --------------------------------------------------------------------------
     const btnMenu = document.getElementById('btn-menu');
     const menuOpciones = document.getElementById('menu-opciones');
     const iconoMenu = document.querySelector('.icono-menu');
@@ -8,32 +14,100 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnMenu && menuOpciones) {
         btnMenu.addEventListener('click', () => {
-            // 1. Alterna la clase para abrir/cerrar el menú animado con clip-path
             const estaAbierto = menuOpciones.classList.toggle('menu-abierto');
             
-            // 2. Control de accesibilidad ARIA
             btnMenu.setAttribute('aria-expanded', estaAbierto);
             menuOpciones.setAttribute('aria-hidden', !estaAbierto);
             
-            // 3. Intercambia el ícono de las tres rayitas por la equis (X)
             if (estaAbierto) {
-                iconoMenu.style.display = 'none';
-                iconoCerrar.style.display = 'block';
+                if (iconoMenu) iconoMenu.style.display = 'none';
+                if (iconoCerrar) iconoCerrar.style.display = 'block';
             } else {
-                iconoMenu.style.display = 'block';
-                iconoCerrar.style.display = 'none';
+                if (iconoMenu) iconoMenu.style.display = 'block';
+                if (iconoCerrar) iconoCerrar.style.display = 'none';
             }
         });
 
-        // Cierra el menú automáticamente si el usuario toca en cualquier otra parte de la pantalla
+        // Cierra el menú al tocar cualquier otra parte de la pantalla
         document.addEventListener('click', (evento) => {
             if (!menuOpciones.contains(evento.target) && !btnMenu.contains(evento.target)) {
                 menuOpciones.classList.remove('menu-abierto');
                 btnMenu.setAttribute('aria-expanded', 'false');
                 menuOpciones.setAttribute('aria-hidden', 'true');
-                iconoMenu.style.display = 'block';
-                iconoCerrar.style.display = 'none';
+                if (iconoMenu) iconoMenu.style.display = 'block';
+                if (iconoCerrar) iconoCerrar.style.display = 'none';
             }
+        });
+    }
+
+    // --------------------------------------------------------------------------
+    // 2. CONTROL DE CONTADORES (Botones + y - del Catálogo)
+    // --------------------------------------------------------------------------
+    const tarjetas = document.querySelectorAll('.tarjeta-producto');
+
+    tarjetas.forEach(tarjeta => {
+        const btnRestar = tarjeta.querySelector('.btn-restar');
+        const btnSumar = tarjeta.querySelector('.btn-sumar');
+        const contador = tarjeta.querySelector('.cantidad-valor');
+
+        if (btnSumar && btnRestar && contador) {
+            btnSumar.addEventListener('click', () => {
+                let cantidad = parseInt(contador.textContent) || 0;
+                contador.textContent = cantidad + 1;
+            });
+
+            btnRestar.addEventListener('click', () => {
+                let cantidad = parseInt(contador.textContent) || 0;
+                if (cantidad > 0) {
+                    contador.textContent = cantidad - 1;
+                }
+            });
+        }
+    });
+
+    // --------------------------------------------------------------------------
+    // 3. ARMADOR DE PEDIDOS Y ENVÍO REFORZADO A WHATSAPP
+    // --------------------------------------------------------------------------
+    const btnEnviar = document.getElementById('btn-enviar-whatsapp');
+    
+    if (btnEnviar) {
+        btnEnviar.addEventListener('click', () => {
+            let mensaje = "¡Hola PyM! 🍕 Quiero realizar el siguiente pedido:\n\n";
+            let tieneProductos = false;
+            let total = 0;
+
+            tarjetas.forEach(tarjeta => {
+                const nombre = tarjeta.getAttribute('data-nombre');
+                const precio = parseFloat(tarjeta.getAttribute('data-precio'));
+                const contador = tarjeta.querySelector('.cantidad-valor');
+                
+                if (contador) {
+                    const cantidad = parseInt(contador.textContent) || 0;
+                    if (cantidad > 0) {
+                        tieneProductos = true;
+                        let subtotal = precio * cantidad;
+                        total += subtotal;
+                        mensaje += `🔹 *${cantidad}x* ${nombre} ($${precio} c/u) -> *$${subtotal}*\n`;
+                    }
+                }
+            });
+
+            if (!tieneProductos) {
+                alert("Por favor, selecciona al menos un producto para tu pedido. 🍕");
+                return;
+            }
+
+            mensaje += `\n💰 *Total Estimado:* *$${total}*\n\nMuchas gracias. ¡Espero su confirmación!`;
+
+
+            // Codificación segura y limpia para la URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // 🌟 CORRECCIÓN EXACTA: Agregamos tu número real y la barra correspondiente
+            const urlFinal = 'https://wa.me/5491135746115?text=' + mensajeCodificado;
+            
+            // Abrimos de forma nativa
+            window.open(urlFinal, '_blank');
         });
     }
 });

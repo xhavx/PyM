@@ -30,7 +30,7 @@ body {
   height: 64px;
   
   /* 🌟 CORRECCIÓN: Ahora toma el fondo crema idéntico al logo de PyM */
-  background-color: var(--bg-header-logo) !important; 
+  background-color: var(--bg-surface-container-highest) !important; 
   
    /* Una línea inferior teja muy suave para separar del fondo */
   border-bottom: 1px solid var(--color-outline-variant) !important;
