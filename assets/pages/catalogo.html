@@ -131,17 +131,51 @@
             </div>
         </div>
         </article>
-
+        <!-- Tarjeta de Producto 3: Bizcochos de grasa (Venta por peso) -->
+          <article class="tarjeta-producto" data-id="3" data-nombre="Bizcochos de grasa" data-precio="2400" data-unidad="peso">
+              <img src="../images/bizcochitos_cuadrados_transp.png" alt="Bizcochos de grasa" class="producto-img">
+              <div class="producto-info">
+                  <h3 class="producto-titulo">Bizcochos de Grasa</h3>
+                  <p class="producto-descripcion">Frescos y crocantes, ideales para acompañar los mates.</p>
+                  <span class="producto-precio">$2.400 <small style="font-size: 0.75rem; color: #747d8c;">/ kg</small></span>
+                  
+                  <div class="control-cantidad">
+                      <button type="button" class="btn-cantidad btn-restar" data-accion="restar">-</button>
+                      <span class="cantidad-valor">0 kg</span>
+                      <button type="button" class="btn-cantidad btn-sumar" data-accion="sumar">+</button>
+                  </div>
+              </div>
+          </article>
     </div>
 
-    <!-- Botón Global flotante o fijo abajo para enviar el Pedido -->
+
+    <!-- Reemplazá el contenedor del botón flotante por este -->
     <div class="contenedor-accion-pedido">
+        
+        <!-- Selector de tipo de entrega -->
+        <div class="opciones-entrega">
+            <label for="selector-entrega" class="label-entrega">¿Cómo querés recibirlo?</label>
+            <select id="selector-entrega" class="select-entrega">
+                <option value="retiro">Retiro por el local (Gratis)</option>
+                <option value="delivery">Envío a domicilio (Costo adicional)</option>
+            </select>
+            <!-- 🌟 NUEVA NOTA ACLARATORIA DE DISTANCIA -->
+            <small id="nota-distancia" class="nota-adicional" style="display: none; color: #ff4757; font-size: 0.8rem; margin-top: 4px; font-weight: 600;">
+                ⚠️ Envío disponible hasta 3 km de distancia del local.
+            </small>
+        </div>
+
+        <!-- Campo de dirección (Oculto por defecto, se muestra si eligen Delivery) -->
+        <div id="contenedor-direccion" class="campo-direccion" style="display: none;">
+            <input type="text" id="input-direccion" placeholder="Ingresá tu dirección (Ej: Av. Rivadavia 1234)" aria-label="Dirección de envío">
+        </div>
+
+        <!-- Botón Global flotante para enviar el Pedido -->
         <button type="button" id="btn-enviar-whatsapp" class="btn-whatsapp-pedido">
-        <span class="material-symbols-outlined">send</span>
-        Enviar Pedido por WhatsApp
+            <span class="material-symbols-outlined">send</span>
+            <span>Enviar Pedido por WhatsApp</span>
         </button>
     </div>
-    </section>
 
 
   </main> <!-- 🌟 CORRECCIÓN 3: Cerramos el main AQUÍ para liberar al footer inferior -->

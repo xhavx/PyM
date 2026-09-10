@@ -565,3 +565,82 @@
 .btn-whatsapp-pedido:active {
   transform: scale(0.98) translateY(0);
 }
+
+/* ==========================================================================
+   SISTEMA DE NOTIFICACIONES (TOAST)
+   ========================================================================== */
+.toast-mensaje {
+    position: fixed;
+    top: -100px; /* Arranca oculto arriba, fuera de la pantalla */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra perfectamente horizontal */
+    background-color: #2ed573; /* Un color verde lindo de éxito */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(46, 213, 115, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999; /* Asegura que quede por encima de todo */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote */
+    pointer-events: none; /* Evita que moleste si el usuario quiere hacer clic abajo */
+}
+
+/* Clase que agrega JavaScript para mostrarlo */
+.toast-mensaje.toast-visible {
+    top: 25px; /* Baja a esta posición cuando se activa */
+}
+
+.toast-mensaje strong {
+    font-weight: 700;
+}
+
+/* Contenedor flotante actualizado */
+.contenedor-accion-pedido {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opciones-entrega {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.label-entrega {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #747d8c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.select-entrega {
+    padding: 10px;
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bold;
+    color: var(--color-texto);
+    outline: none;
+    background-color: var(--color-gris-suave);
+    cursor: pointer;
+}
+
+.campo-direccion input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #2ed573; /* Borde verde para resaltar */
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    outline: none;
+}
