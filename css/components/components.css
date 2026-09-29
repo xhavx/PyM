@@ -739,3 +739,105 @@
     height: 160px;
   }
 }
+
+/* ==========================================================================
+   7. ADAPTACIÓN PARA LA GALERÍA DE VIDEOS
+   ========================================================================== */
+.galeria-marco-video {
+  width: 100%;
+  height: 130px; /* Misma altura que el marco de fotos en celular */
+  background-color: #000000; /* Fondo negro clásico de reproductor */
+  overflow: hidden;
+  border-top-left-radius: calc(var(--radius-lg, 16px) - 1px);
+  border-top-right-radius: calc(var(--radius-lg, 16px) - 1px);
+}
+
+.galeria-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Hace que el video llene la tarjeta de forma fluida */
+}
+
+@media (min-width: 768px) {
+  .galeria-marco-video {
+    height: 160px; /* Se adapta a pantallas grandes a la par de las fotos */
+  }
+}
+
+.pestanas-contenedor {
+  display: flex;
+  background-color: var(--bg-surface-container-low, #fcfcfc);
+  border-bottom: 1px solid var(--color-outline-variant, #f0f0f0);
+  padding: 4px var(--space-md) 0 var(--space-md);
+  gap: var(--space-md);
+  margin-top: 12px; 
+  position: sticky;
+  top: 60px; /* Ajustar según la altura de tu header-principal fijo */
+  z-index: 10;
+}
+
+.btn-pestana {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-md) 0;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-on-surface-variant);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-pestana span.material-symbols-outlined {
+  font-size: 20px;
+  color: inherit;
+}
+
+/* Estado activo cuando la pestaña está seleccionada */
+.btn-pestana.activo {
+  color: var(--color-primary); /* Color teja corporativo */
+  border-bottom-color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Estilos base para los videos integrados */
+.galeria-marco-video {
+  width: 100%;
+  height: 130px;
+  background-color: #000000;
+  overflow: hidden;
+  border-top-left-radius: calc(var(--radius-lg, 16px) - 1px);
+  border-top-right-radius: calc(var(--radius-lg, 16px) - 1px);
+}
+
+.galeria-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .pestanas-contenedor {
+    justify-content: center;
+    gap: var(--space-2xl);
+  }
+  .btn-pestana {
+    flex: initial;
+    padding: var(--space-md) var(--space-xl);
+  }
+  .galeria-marco-video {
+    height: 180px;
+  }
+}
+
+.galeria-item-categoria:empty {
+  display: none;
+}

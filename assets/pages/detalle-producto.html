@@ -49,15 +49,15 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./assets/pages/catalogo.html" class="enlace-menu">
+                    <a href="./catalogo.html" class="enlace-menu">
                     <span class="material-symbols-outlined" aria-hidden="true">local_pizza</span>
-                    <span>Catálogo de Pizzas</span>
+                    <span>Catálogo</span>
                     </a>
                 </li>
                 <li>
-                    <a href="./assets/pages/detalle-producto.html" class="enlace-menu">
+                    <a href="./detalle-producto.html" class="enlace-menu">
                     <span class="material-symbols-outlined" aria-hidden="true">flatware</span>
-                    <span>//Nuestros productos</span>
+                    <span>Nuestros productos</span>
                     </a>
                 </li>
                 </ul>
@@ -66,103 +66,98 @@
             </div>
             
         </header>
-       <!-- Contenedor Principal de la Galería de Panadería -->
-        <main class="galeria-productos-seccion">
-            <!-- CORTINA SEMÁNTICA: Engloba el bloque temático de productos -->
-            <section class="galeria-productos-seccion" aria-labelledby="titulo-galeria">
-            <h2 id="titulo-galeria" class="galeria-seccion-titulo">Nuestras Especialidades</h2>
             
-            <!-- Contenedor CSS: Mantiene la cuadrícula Grid (sigue siendo div porque es solo diseño) -->
-            <div class="galeria-cuadricula">
+       <!-- Contenedor Principal de la Galería de Panadería -->
+        <main class="galeria-principal-contenedor">
+            <!-- Barra de Navegación por Pestañas (Tabs) -->
+            <nav class="pestanas-contenedor" aria-label="Opciones de visualización">
+                <button type="button" class="btn-pestana activo" data-target="seccion-fotos" aria-selected="true">
+                    <span class="material-symbols-outlined" aria-hidden="true">image</span>
+                    Especialidades
+                </button>
+                <button type="button" class="btn-pestana" data-target="seccion-videos" aria-selected="false">
+                    <span class="material-symbols-outlined" aria-hidden="true">movie</span>
+                    Así lo Preparamos
+                </button>
+            </nav>
+            <!-- CORTINA SEMÁNTICA: Engloba el bloque temático de productos -->
+            <!-- SECCIÓN 1: FOTOS -->
+            <section id="seccion-fotos" class="galeria-productos-seccion" aria-hidden="false">
+                <h2 id="titulo-galeria" class="galeria-seccion-titulo">Nuestras Especialidades</h2>
+                
+                <div class="galeria-cuadricula">
                 
                 <article class="galeria-tarjeta">
-                <div class="galeria-marco-foto">
+                    <div class="galeria-marco-foto">
                     <img src="../images/productos/pepas.jpeg" alt="Pepas caseras" class="galeria-foto">
-                </div>
-                <div class="galeria-detalles">
+                    </div>
+                    <div class="galeria-detalles">
                     <h3 class="galeria-item-titulo">Pepas caseras</h3>
                     <p class="galeria-item-categoria"></p>
-                </div>
+                    </div>
                 </article>
- 
+            
                 <article class="galeria-tarjeta">
-                <div class="galeria-marco-foto">
-                    <img src="../images/productos/alfajores de maizena.jpeg" alt="alfajores de maizena" class="galeria-foto">
-                </div>
-                <div class="galeria-detalles">
-                    <h3 class="galeria-item-titulo">alfajores de maizena</h3>
+                    <div class="galeria-marco-foto">
+                    <img src="../images/productos/alfajores de maizena.jpeg" alt="Alfajores de maizena" class="galeria-foto">
+                    </div>
+                    <div class="galeria-detalles">
+                    <h3 class="galeria-item-titulo">Alfajores de maizena</h3>
                     <p class="galeria-item-categoria"></p>
-                </div>
+                    </div>
                 </article>
 
                 <article class="galeria-tarjeta">
-                <div class="galeria-marco-foto">
-                    <img src="../images/productos/pastafrola.jpeg" alt="pastafrola" class="galeria-foto">
-                </div>
-                <div class="galeria-detalles">
-                    <h3 class="galeria-item-titulo">pastafrola</h3>
+                    <div class="galeria-marco-foto">
+                    <img src="../images/productos/pastafrola.jpeg" alt="Pastafrola" class="galeria-foto">
+                    </div>
+                    <div class="galeria-detalles">
+                    <h3 class="galeria-item-titulo">Pastafrola</h3>
                     <p class="galeria-item-categoria"></p>
-                </div>
+                    </div>
                 </article>
- 
+            
                 <article class="galeria-tarjeta">
-                <div class="galeria-marco-foto">
-                    <img src="../images/productos/prepizza.jpeg" alt="prepizza" class="galeria-foto">
-                </div>
-                <div class="galeria-detalles">
-                    <h3 class="galeria-item-titulo">prepizza</h3>
+                    <div class="galeria-marco-foto">
+                    <img src="../images/productos/prepizza.jpeg" alt="Prepizza" class="galeria-foto">
+                    </div>
+                    <div class="galeria-detalles">
+                    <h3 class="galeria-item-titulo">Prepizza</h3>
                     <p class="galeria-item-categoria"></p>
-                </div>
+                    </div>
                 </article>
 
                 <article class="galeria-tarjeta">
-                <div class="galeria-marco-foto">
-                    <img src="../images/productos/torta de frutilla.jpeg" alt="torta de frutilla" class="galeria-foto">
-                </div>
-                <div class="galeria-detalles">
-                    <h3 class="galeria-item-titulo">torta de frutilla</h3>
+                    <div class="galeria-marco-foto">
+                    <img src="../images/productos/torta de frutilla.jpeg" alt="Torta de frutilla" class="galeria-foto">
+                    </div>
+                    <div class="galeria-detalles">
+                    <h3 class="galeria-item-titulo">Torta de frutilla</h3>
                     <p class="galeria-item-categoria"></p>
-                </div>
+                    </div>
                 </article>
-                
 
-            </div>
+                </div>
             </section>
 
-            <section class="galeria-videos-seccion" aria-labelledby="titulo-procesos">
+            <!-- SECCIÓN 2: VIDEOS -->
+            <section id="seccion-videos" class="galeria-productos-seccion" aria-hidden="true" style="display: none;">
                 <h2 id="titulo-procesos" class="galeria-seccion-titulo">Así lo Preparamos</h2>
                 
-                <!-- Reutilizamos la misma cuadrícula Grid para mantener la simetría -->
                 <div class="galeria-cuadricula">
                     
-                    <!-- Video Tarjeta 1 -->
-                    <article class="galeria-tarjeta video-tarjeta">
+                <article class="galeria-tarjeta">
                     <div class="galeria-marco-video">
-                        <!-- Reemplazar el src con el archivo de video local o enlace correspondiente -->
-                        <video class="galeria-video" controls preload="metadata" poster="../images/poster-pastaflora.jpg">
+                    <video class="galeria-video" controls preload="none" poster="../images/portada-pastaflora.jpg">
                         <source src="../videos/preparacion-pastaflora.mp4" type="video/mp4">
                         Tu navegador no soporta videos.
-                        </video>
+                    </video>
                     </div>
                     <div class="galeria-detalles">
-                        <h3 class="galeria-item-titulo">El secreto de la Pastafrola</h3>
-                        <p class="galeria-item-categoria">Masa Artesanal</p>
+                    <h3 class="galeria-item-titulo">El secreto de la Pastafrola</h3>
+                    <p class="galeria-item-categoria">Masa Artesanal</p>
                     </div>
-                    </article>
-
-                    <!-- Video Tarjeta 2 -->
-                    <article class="galeria-tarjeta video-tarjeta">
-                    <div class="galeria-marco-video">
-                        <video class="galeria-video" controls preload="metadata" poster="../images/poster-prepizzas.jpg">
-                        <source src="../videos/amasado-prepizzas.mp4" type="video/mp4">
-                        Tu navegador no soporta videos.
-                        </video>
-                    </div>
-                    <div class="galeria-detalles">
-                        <h3 class="galeria-item-titulo">Amasando nuestras Prepizzas</h3>
-                        <p class="galeria-item-categoria">Masa Madre</p>
-                    </div>
-                    </article>
+                </article>
 
                 </div>
             </section>
@@ -211,5 +206,7 @@
 
         <!-- Tu JavaScript Central -->
         <script src="../js/main.js" defer></script>
-            </body>
+        <script src="../js/galeria.js" defer></script>
+    </body>
+
 </html>
