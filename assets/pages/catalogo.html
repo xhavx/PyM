@@ -94,59 +94,60 @@
     </section>
     <!-- catalogo.html -->
     <section class="seccion-catalogo" aria-labelledby="titulo-catalogo">
-    <h2 id="titulo-catalogo" class="titulo-seccion-productos">Nuestras Prepizzas</h2>
-    
-    <!-- 🌟 La Grilla Responsiva que ya tienes en tu layout.css -->
-    <div class="grid-products">
+        <h2 id="titulo-catalogo" class="titulo-seccion-productos">Nuestras Prepizzas</h2>
         
-        <!-- Tarjeta de Producto 1: Muzzarella -->
-        <article class="tarjeta-producto" data-id="1" data-nombre="Prepizza de Muzzarella" data-precio="1200">
-        <img src="../images/muza.png" alt="Prepizza de Muzzarella" class="producto-img">
-        <div class="producto-info">
-            <h3 class="producto-titulo">Muzzarella</h3>
-            <p class="producto-descripcion">Con salsa de tomate casera y abundante muzzarella premium.</p>
-            <span class="producto-precio">$1.200</span>
+        <!-- 🌟 La Grilla Responsiva que ya tienes en tu layout.css -->
+        <div class="grid-products">
             
-            <!-- Selectores de Cantidad -->
-            <div class="control-cantidad">
-            <button type="button" class="btn-cantidad btn-restar">-</button>
-            <span class="cantidad-valor">0</span>
-            <button type="button" class="btn-cantidad btn-sumar">+</button>
+            <!-- Tarjeta de Producto 1: Muzzarella -->
+            <article class="tarjeta-producto" data-id="1" data-nombre="Prepizza de Muzzarella" data-precio="1200">
+            <img src="../images/muza.png" alt="Prepizza de Muzzarella" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Muzzarella</h3>
+                <p class="producto-descripcion">Con salsa de tomate casera y abundante muzzarella premium.</p>
+                <span class="producto-precio">$1.200</span>
+                
+                <!-- Selectores de Cantidad -->
+                <div class="control-cantidad">
+                <button type="button" class="btn-cantidad btn-restar">-</button>
+                <span class="cantidad-valor">0</span>
+                <button type="button" class="btn-cantidad btn-sumar">+</button>
+                </div>
             </div>
-        </div>
-        </article>
+            </article>
 
-        <!-- Tarjeta de Producto 2: Pepperoni -->
-        <article class="tarjeta-producto" data-id="2" data-nombre="Prepizza de Peperoni" data-precio="1400">
-        <img src="../images/pepper.png" alt="Prepizza de Peperoni" class="producto-img">
-        <div class="producto-info">
-            <h3 class="producto-titulo">Peperoni</h3>
-            <p class="producto-descripcion">Nuestra clásica masa con pepperoni picante y oliva.</p>
-            <span class="producto-precio">$1.400</span>
-            
-            <div class="control-cantidad">
-            <button type="button" class="btn-cantidad btn-restar">-</button>
-            <span class="cantidad-valor">0</span>
-            <button type="button" class="btn-cantidad btn-sumar">+</button>
+            <!-- Tarjeta de Producto 2: Pepperoni -->
+            <article class="tarjeta-producto" data-id="2" data-nombre="Prepizza de Peperoni" data-precio="1400">
+            <img src="../images/pepper.png" alt="Prepizza de Peperoni" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Peperoni</h3>
+                <p class="producto-descripcion">Nuestra clásica masa con pepperoni picante y oliva.</p>
+                <span class="producto-precio">$1.400</span>
+                
+                <div class="control-cantidad">
+                <button type="button" class="btn-cantidad btn-restar">-</button>
+                <span class="cantidad-valor">0</span>
+                <button type="button" class="btn-cantidad btn-sumar">+</button>
+                </div>
             </div>
-        </div>
-        </article>
-        <!-- Tarjeta de Producto 3: Bizcochos de grasa (Venta por peso) -->
-          <article class="tarjeta-producto" data-id="3" data-nombre="Bizcochos de grasa" data-precio="2400" data-unidad="peso">
-              <img src="../images/bizcochitos_cuadrados_transp.png" alt="Bizcochos de grasa" class="producto-img">
-              <div class="producto-info">
-                  <h3 class="producto-titulo">Bizcochos de Grasa</h3>
-                  <p class="producto-descripcion">Frescos y crocantes, ideales para acompañar los mates.</p>
-                  <span class="producto-precio">$2.400 <small style="font-size: 0.75rem; color: #747d8c;">/ kg</small></span>
-                  
-                  <div class="control-cantidad">
-                      <button type="button" class="btn-cantidad btn-restar" data-accion="restar">-</button>
-                      <span class="cantidad-valor">0 kg</span>
-                      <button type="button" class="btn-cantidad btn-sumar" data-accion="sumar">+</button>
+            </article>
+            <!-- Tarjeta de Producto 3: Bizcochos de grasa (Venta por peso) -->
+              <article class="tarjeta-producto" data-id="3" data-nombre="Bizcochos de grasa" data-precio="2400" data-unidad="peso">
+                  <img src="../images/bizcochitos_cuadrados_transp.png" alt="Bizcochos de grasa" class="producto-img">
+                  <div class="producto-info">
+                      <h3 class="producto-titulo">Bizcochos de Grasa</h3>
+                      <p class="producto-descripcion">Frescos y crocantes, ideales para acompañar los mates.</p>
+                      <span class="producto-precio">$2.400 <small style="font-size: 0.75rem; color: #747d8c;">/ kg</small></span>
+                      
+                      <div class="control-cantidad">
+                          <button type="button" class="btn-cantidad btn-restar" data-accion="restar">-</button>
+                          <span class="cantidad-valor">0 kg</span>
+                          <button type="button" class="btn-cantidad btn-sumar" data-accion="sumar">+</button>
+                      </div>
                   </div>
-              </div>
-          </article>
-    </div>
+              </article>
+        </div>
+    </section>
 
 
     <!-- Reemplazá el contenedor del botón flotante por este -->

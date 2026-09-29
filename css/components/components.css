@@ -644,3 +644,98 @@
     box-sizing: border-box;
     outline: none;
 }
+
+.galeria-productos-seccion {
+  width: 100%;
+  padding: 16px; /* Despega la galería de los bordes de la pantalla del celular */
+  box-sizing: border-box;
+}
+
+.galeria-seccion-titulo {
+  font-family: var(--font-display);
+  color: var(--text-on-surface);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Cuadrícula adaptativa: En celulares mostrará 2 columnas elegantes alineadas */
+.galeria-cuadricula {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Fuerza dos columnas estéticas en móvil */
+  gap: 16px; /* Espacio de separación entre las tarjetas */
+}
+
+/* Tarjeta contenedora de la foto y texto */
+.galeria-tarjeta {
+  /* 🌟 CLAVE: Forzamos tu fondo Material 3 para que se note la separación */
+  background-color: var(--bg-surface-container, #ffffff) !important; 
+  border: 1px solid var(--color-outline-variant, #f0f0f0);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.05));
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.galeria-tarjeta:hover,
+.galeria-tarjeta:active {
+  transform: translateY(-4px); /* Eleva la tarjeta suavemente */
+  box-shadow: 0 8px 16px rgba(159, 60, 22, 0.12); /* Sombra teja cálida que combina con tu marca */
+  cursor: pointer;
+}
+
+/* Marco contenedor para la foto */
+.galeria-marco-foto {
+  width: 100%;
+  height: 130px; /* Altura ideal y compacta para celular en doble columna */
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-surface-container-low, #fcfcfc);
+}
+
+.galeria-foto {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Corta los sobrantes de la foto del celular y llena el cuadro */
+  object-position: center; 
+}
+
+/* Contenedor de la información con márgenes internos */
+.galeria-detalles {
+  padding: 12px 12px 16px 12px; /* Aumentamos el margen de abajo (16px) para dar respiro */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-transform: capitalize;
+}
+
+.galeria-item-titulo {
+  font-family: var(--font-display);
+  color: var(--text-on-surface);
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.galeria-item-categoria {
+  font-family: var(--font-body);
+  color: var(--text-on-surface-variant);
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Ajustes automáticos para pantallas más grandes (Tablets / PC) */
+@media (min-width: 768px) {
+  .galeria-cuadricula {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+  }
+  .galeria-marco-foto {
+    height: 160px;
+  }
+}
